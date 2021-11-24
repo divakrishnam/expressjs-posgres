@@ -16,6 +16,10 @@ docker ps
 
 ```
 npx sequelize migration:generate --name create_users_table
+
+npx sequelize migration:generate --name create_roles_table
+
+npx sequelize migration:generate --name create_refresh_token_table
 ```
 
 ```
@@ -23,6 +27,8 @@ npx sequelize db:migrate --env test
 ```
 
 ```
+npx sequelize db:migrate:undo --name 20211124045321-create_roles_table --env test
+
 npx sequelize db:migrate:undo:all --env test
 ```
 
