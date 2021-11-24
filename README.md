@@ -32,6 +32,10 @@ npx sequelize db:migrate:undo --name 20211124045321-create_roles_table --env tes
 npx sequelize db:migrate:undo:all --env test
 ```
 
+```
+npx sequelize db:migrate:status
+```
+
 IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
 
 F2 = Rename
