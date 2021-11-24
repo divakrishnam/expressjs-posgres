@@ -20,7 +20,7 @@ router.post(
 
     const payload = { email };
     const accessToken = JWTUtils.generateAccessToken(payload);
-    const refreshToken = JWTUtils.generateRefreshToken(token);
+    const refreshToken = JWTUtils.generateRefreshToken(payload);
     await User.createNewUser({ ...req.body, refreshToken });
 
     return res.status(200).send({
@@ -33,3 +33,5 @@ router.post(
     });
   })
 );
+
+export default router;
