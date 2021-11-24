@@ -14,6 +14,18 @@ docker-compose up -d
 docker ps
 ```
 
+```
+npx sequelize migration:generate --name create_users_table
+```
+
+```
+npx sequelize db:migrate --env test
+```
+
+```
+npx sequelize db:migrate:undo:all --env test
+```
+
 IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
 
-F2
+F2 = Rename
