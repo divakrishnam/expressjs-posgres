@@ -163,4 +163,12 @@ describe('User', () => {
       });
     });
   });
+
+  describe('hooks', () => {
+    it('should not attempt to hash the password if it is not given', async () => {
+      const user = await TestHelpers.createNewUser();
+      user.email = 'test@example.com';
+      await user.save();
+    });
+  });
 });
