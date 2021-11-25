@@ -1,6 +1,7 @@
 import '../src/config';
 import Database from '../src/database';
 import dbConfig from '../src/config/database';
+import request from 'supertest';
 
 let db;
 
@@ -46,5 +47,17 @@ export default class TestHelpers {
   static getApp() {
     const App = require('../src/app').default;
     return new App().getApp();
+  }
+
+  static async registerNewUser(options = {}) {
+    const {
+      email = 'test@example.com',
+      password = 'test123',
+      endpoint = '/v1/register',
+    } = options;
+    return (await request(TestHelpers.getApp()).post(endpoint)).setEncoding({
+      email,
+      password,
+    });
   }
 }
