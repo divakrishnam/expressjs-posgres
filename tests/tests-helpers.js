@@ -55,7 +55,7 @@ export default class TestHelpers {
       password = 'test123',
       endpoint = '/v1/register',
     } = options;
-    return (await request(TestHelpers.getApp()).post(endpoint)).setEncoding({
+    return await request(TestHelpers.getApp()).post(endpoint).send({
       email,
       password,
     });
