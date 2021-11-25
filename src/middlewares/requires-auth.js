@@ -24,7 +24,7 @@ export default function requireAuth(tokenType = 'accessToken') {
       let jwt;
       switch (tokenType) {
         case 'refreshToken':
-          jwt = JWTUtils.verifyAccessToken(token);
+          jwt = JWTUtils.verifyRefreshToken(token);
           break;
 
         case 'accessToken':
